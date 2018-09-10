@@ -1,0 +1,24 @@
+{
+    "name": "jech/colors",
+    "description": "Library for looking up color names using hexadecimal representations.",
+    "keywords": ["color", "composer", "package"],
+    "license": "DBAD",
+    "authors": [
+        {
+            "name": "Jerven Clark Chua",
+            "email": "jervenclark@gmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=7.1"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jech\\Colors\\": "src/"
+        }
+    }
+}

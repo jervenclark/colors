@@ -2,7 +2,7 @@
     "name": "jech/colors",
     "description": "Library for looking up color names using hexadecimal representations.",
     "keywords": ["color", "composer", "package"],
-    "license": "DBAD",
+    "license": "MIT",
     "authors": [
         {
             "name": "Jerven Clark Chua",

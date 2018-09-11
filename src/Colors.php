@@ -1,6 +1,6 @@
 <?php
 
-namespace Jech\Colors;
+namespace Jervenclark\Colors;
 
 /**
  *  Colors class
@@ -201,14 +201,16 @@ class Colors{
      * @param string $color
      * @return string
      */
-    public static function toRGB (string $color)
+    public static function toRGB (string $color, bool $stringify = false)
     {
         $hex = self::toHex($color);
         if ($hex == '') return '';
         $red   = hexdec(substr($hex, 0, 2));
         $green = hexdec(substr($hex, 2, 2));
         $blue  = hexdec(substr($hex, 4, 2));
-        return "($red,$green,$blue)";
+        $rgb   = [$red, $green, $blue];
+        if (!$stringify) return $rgb;
+        return '(' . implode(',', $rgb) . ')';
     }
 
 }

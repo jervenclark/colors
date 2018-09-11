@@ -16,7 +16,7 @@ class ColorsTest extends TestCase
    */
   public function testIsThereAnySyntaxError()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue(is_object($colors));
     unset($colors);
   }
@@ -27,7 +27,7 @@ class ColorsTest extends TestCase
    */
   public function testFromHexWithUppercaseParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->fromHex('FFFFFF') == 'white');
     unset($colors);
   }
@@ -38,7 +38,7 @@ class ColorsTest extends TestCase
    */
   public function testFromHexWithLowercaseParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->fromHex('fffafa') === 'snow');
     unset($colors);
   }
@@ -49,7 +49,7 @@ class ColorsTest extends TestCase
    */
   public function testFromHexWithUnuniformCaseParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->fromHex('00cEd1') == 'darkturquoise');
     unset($colors);
   }
@@ -60,7 +60,7 @@ class ColorsTest extends TestCase
    */
   public function testFromHexWithInalidParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->fromHex('GoldAndBlue') == '');
     unset($colors);
   }
@@ -71,7 +71,7 @@ class ColorsTest extends TestCase
    */
   public function testFromHexWithEmptyParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->fromHex('') == '');
     unset($colors);
   }
@@ -82,7 +82,7 @@ class ColorsTest extends TestCase
    */
   public function testFromHexWithIntegerParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->fromHex(42) == '');
     unset($colors);
   }
@@ -93,7 +93,7 @@ class ColorsTest extends TestCase
    */
   public function testToHexWithUppercaseParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->toHex('TOMATO') == 'FF6347');
     unset($colors);
   }
@@ -104,7 +104,7 @@ class ColorsTest extends TestCase
    */
   public function testToHexWithLowercaseParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->toHex('seashell') == 'FFF5EE');
     unset($colors);
   }
@@ -115,7 +115,7 @@ class ColorsTest extends TestCase
    */
   public function testToHexWithUnuniformCaseParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->toHex('mOccASin') == 'FFE4B5');
     unset($colors);
   }
@@ -126,7 +126,7 @@ class ColorsTest extends TestCase
    */
   public function testToHexWithInvalidParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->toHex('BlackTiger') == '');
     unset($colors);
   }
@@ -137,7 +137,7 @@ class ColorsTest extends TestCase
    */
   public function testToHexWithSpaceSeparatedParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->toHex('iv o ry') == 'FFFFF0');
     unset($colors);
   }
@@ -148,7 +148,7 @@ class ColorsTest extends TestCase
    */
   public function testToHexWithEmptyParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->toHex('') == '');
     unset($colors);
   }
@@ -159,7 +159,7 @@ class ColorsTest extends TestCase
    */
   public function testToHexWithIntegerParameter()
   {
-    $colors = new Jech\Colors\Colors;
+    $colors = new Jervenclark\Colors\Colors;
     $this->assertTrue($colors->toHex(42) == '');
     unset($colors);
   }
@@ -168,10 +168,21 @@ class ColorsTest extends TestCase
    * Check toRGB with uppercase parameter
    *
    */
-  public function testToRGBWithUppercaseParameter()
+  public function testToRGBNonStringWithUppercaseParameter()
   {
-    $colors = new Jech\Colors\Colors;
-    $this->assertTrue($colors->toRGB('DARK OLIVE GREEN') == '(85,107,47)');
+    $colors = new Jervenclark\Colors\Colors;
+    $this->assertTrue($colors->toRGB('DARK OLIVE GREEN') == [85,107,47]);
+    unset($colors);
+  }
+
+  /**
+   * Check toRGB with uppercase parameter
+   *
+   */
+  public function testToRGBStringWithUppercaseParameter()
+  {
+    $colors = new Jervenclark\Colors\Colors;
+    $this->assertTrue($colors->toRGB('DARK OLIVE GREEN', true) == '(85,107,47)');
     unset($colors);
   }
 

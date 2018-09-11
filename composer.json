@@ -1,5 +1,5 @@
 {
-    "name": "jech/colors",
+    "name": "jervenclark/colors",
     "description": "Library for looking up color names using hexadecimal representations.",
     "keywords": ["color", "composer", "package"],
     "license": "MIT",
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Jech\\Colors\\": "src/"
+            "Jervenclark\\Colors\\": "src/"
         }
     }
 }

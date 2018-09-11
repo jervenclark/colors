@@ -193,4 +193,22 @@ class Colors{
         return array_search($hex, self::COLOR_MAP) ?? '';
     }
 
+    /**
+     * toRGB
+     *
+     * Lookup rgb representation using color name
+     *
+     * @param string $color
+     * @return string
+     */
+    public static function toRGB (string $color)
+    {
+        $hex = self::toHex($color);
+        if ($hex == '') return '';
+        $red   = hexdec(substr($hex, 0, 2));
+        $green = hexdec(substr($hex, 2, 2));
+        $blue  = hexdec(substr($hex, 4, 2));
+        return "($red,$green,$blue)";
+    }
+
 }

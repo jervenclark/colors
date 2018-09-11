@@ -164,4 +164,15 @@ class ColorsTest extends TestCase
     unset($colors);
   }
 
+  /**
+   * Check toRGB with uppercase parameter
+   *
+   */
+  public function testToRGBWithUppercaseParameter()
+  {
+    $colors = new Jech\Colors\Colors;
+    $this->assertTrue($colors->toRGB('DARK OLIVE GREEN') == '(85,107,47)');
+    unset($colors);
+  }
+
 }
